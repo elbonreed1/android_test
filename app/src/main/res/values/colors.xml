@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="roundButtonColor">#47FFFFFF</color>
+    <color name="backgroundColor">#050B18</color>
+    <color name="yellow">#F4D144</color>
+    <color name="downloadsColor">#45454D</color>
+    <color name="tag">#3D44A9F4</color>
+    <color name="tagText">#44A9F4</color>
+    <color name="descriptionTextColor">#B3EEF2FB</color>
+    <color name="reviewTextColor">#EEF2FB</color>
+    <color name="NumReviewTextColor">#A8ADB7</color>
+    <color name="dateColor">#66FFFFFF</color>
+    <color name="reviewColor">#A8ADB7</color>
 </resources>

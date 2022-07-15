@@ -1,11 +1,372 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity"
+            android:background="@color/backgroundColor"
+            android:id="@+id/root">
 
-    <!-- Место для верстки -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+                android:id="@+id/background"
+                android:layout_marginTop="220dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="-126dp"
+                android:paddingEnd="-127dp"
+                android:paddingBottom="-312dp"
+                android:scaleType="fitStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/bottomBackgroundImage"
+                android:src="@drawable/imgbackground"
+                android:contentDescription="Back Ground Game Image" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="@color/roundButtonColor"
+                android:src="@drawable/moresquare"
+                app:borderWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="More" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="56dp"
+                android:backgroundTint="@color/roundButtonColor"
+                android:src="@drawable/arrowleft"
+                app:borderWidth="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="Back" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottomBackgroundImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="296dp"
+        />
+        <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_marginTop="274dp"
+                android:scaleType="centerInside"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:src="@drawable/imglogo"
+                android:layout_marginStart="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription"
+        />
+
+        <TextView
+                android:id="@+id/gameName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/logoImage"
+                app:layout_constraintTop_toTopOf="@id/bottomBackgroundImage"
+                tools:text="DoTA 2" />
+
+        <RatingBar
+                android:id="@+id/rating"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="7dp"
+                android:progressTint="@color/yellow"
+                android:rating="4.9"
+                android:secondaryProgressTint="@color/yellow"
+                app:layout_constraintStart_toEndOf="@id/logoImage"
+                app:layout_constraintTop_toBottomOf="@id/gameName" />
+
+        <TextView
+                android:id="@+id/downloadsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/downloadsColor"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@id/rating"
+                app:layout_constraintStart_toEndOf="@id/rating"
+                tools:text="70M" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/tag1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:cornerRadius="100dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:backgroundTint="@color/tag"
+                android:textColor="@color/tagText"
+                android:textSize="10sp"
+                tools:ignore="SmallSp"
+                app:layout_constraintTop_toBottomOf="@id/logoImage"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="MOBA" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:cornerRadius="100dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:backgroundTint="@color/tag"
+                android:textColor="@color/tagText"
+                android:textSize="10sp"
+                tools:ignore="SmallSp"
+                app:layout_constraintTop_toBottomOf="@id/logoImage"
+                app:layout_constraintStart_toEndOf="@id/tag1"
+                tools:text="MULTIPLAYER" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/tag3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:minWidth="0dp"
+                app:cornerRadius="100dp"
+                android:minHeight="0dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:backgroundTint="@color/tag"
+                android:textColor="@color/tagText"
+                android:textSize="10sp"
+                tools:ignore="SmallSp"
+                app:layout_constraintTop_toBottomOf="@id/logoImage"
+                app:layout_constraintStart_toEndOf="@id/tag2"
+                tools:text="STRATEGY" />
+
+        <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:lineSpacingExtra="5sp"
+                android:textColor="@color/descriptionTextColor"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/tag1"
+                tools:text="Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the Ancient, whilst defending their own." />
+
+        <TextView
+                android:id="@+id/reviewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/reviewTextColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="24dp"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                android:text="Review &amp; Ratings" />
+
+        <TextView
+                android:id="@+id/mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:layout_marginStart="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reviewText"
+                tools:text="4.9" />
+
+        <RatingBar
+                android:id="@+id/rating_bar_near_mark"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="29dp"
+                android:progressTint="@color/yellow"
+                android:rating="4.9"
+                android:secondaryProgressTint="@color/yellow"
+                app:layout_constraintStart_toEndOf="@id/mark"
+                app:layout_constraintTop_toBottomOf="@id/reviewText" />
+
+        <TextView
+                android:id="@+id/num_downloads_text_near_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="49dp"
+                android:textColor="@color/NumReviewTextColor"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/rating_bar_near_mark"
+                app:layout_constraintTop_toBottomOf="@id/reviewText"
+                android:text="70M Reviews" />
+
+        <ImageView
+                android:id="@+id/line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mark"
+                tools:ignore="ContentDescription" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ava1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTintMode="multiply"
+                android:src="@drawable/ava1"
+                app:borderWidth="0dp"
+                app:fabSize="mini"
+                app:layout_constraintStart_toStartOf="parent"
+                app:maxImageSize="36dp"
+                android:layout_marginStart="24dp"
+                tools:ignore="ContentDescription"
+                app:layout_constraintTop_toBottomOf="@id/line" />
+
+        <TextView
+                android:id="@+id/name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="-2dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@id/ava1"
+                app:layout_constraintTop_toTopOf="@id/ava1"
+                tools:text="Auguste Conte" />
+
+        <TextView
+                android:id="@+id/dateText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="7dp"
+                android:textColor="@color/dateColor"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@id/ava1"
+                app:layout_constraintTop_toBottomOf="@id/name1"
+                tools:text="February 14, 2019" />
+
+        <TextView
+                android:id="@+id/message1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="@color/reviewColor"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/ava1"
+                app:layout_constraintTop_toBottomOf="@id/ava1"
+                tools:text="“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ava2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTintMode="multiply"
+                android:src="@drawable/ava2"
+                app:borderWidth="0dp"
+                app:fabSize="mini"
+                app:layout_constraintStart_toStartOf="parent"
+                app:maxImageSize="36dp"
+                android:layout_marginStart="24dp"
+                tools:ignore="ContentDescription"
+                app:layout_constraintTop_toBottomOf="@id/message1" />
+
+        <TextView
+                android:id="@+id/name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="-2dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@id/ava2"
+                app:layout_constraintTop_toTopOf="@id/ava2"
+                tools:text="Jang Marcelino" />
+
+        <TextView
+                android:id="@+id/dateText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="7dp"
+                android:textColor="@color/dateColor"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@id/ava2"
+                app:layout_constraintTop_toBottomOf="@id/name2"
+                tools:text="February 14, 2019" />
+
+        <TextView
+                android:id="@+id/message2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="@color/reviewColor"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/ava2"
+                app:layout_constraintTop_toBottomOf="@id/ava2"
+                tools:text="“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_install"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="36dp"
+                android:backgroundTint="@color/yellow"
+                android:contentDescription="Install"
+                android:textAllCaps="false"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/message2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/backgroundColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:text="Install" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
